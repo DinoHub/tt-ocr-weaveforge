@@ -1,13 +1,11 @@
-FROM registry.access.redhat.com/ubi8/python-311:1-43
+FROM registry.access.redhat.com/ubi9/python-311@sha256:fc669a67a0ef9016c3376b2851050580b3519affd5ec645d629fd52d2a8b8e4a
 
 WORKDIR /app
 
-COPY ../../requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
+USER 1001
 
-COPY ./components/VideoToFrame/VideoToFrame.py /app/VideoToFrame.py
-COPY ../../wf_base_component.py /app/wf_base_component.py
-COPY ../../wf_component_types.py /app/wf_component_types.py
-COPY ../../wf_data_types.py /app/wf_data_types.py
-
-RUN pip install opencv-python-headless
+COPY ./VideoToFrame.py /app/VideoToFrame.py
+COPY ./weaveforge-0.1.0-py3-none-any.whl /app/weaveforge-0.1.0-py3-none-any.whl
+RUN pip install --upgrade pip
+RUN --mount=type=cache,target=/root/.cache/pip pip install /app/weaveforge-0.1.0-py3-none-any.whl
+RUN pip install opencv-python-headless minio
