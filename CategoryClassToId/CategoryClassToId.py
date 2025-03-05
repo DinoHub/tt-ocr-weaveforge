@@ -1,10 +1,12 @@
 '''
-WeaveForge VideoToFrame component
+WeaveForge CategoryClassToId Component
 '''
 from weaveforge import WFEventGenerator
 
 class CategoryClassToId(WFEventGenerator):
     '''
+    Converts class name to matching ID defined in MAPPINGS
+    
     Inputs:
         class_name: str
     Outputs:
