@@ -4,7 +4,9 @@ import logging
 import redis
 
 class WriteCocoImageToRedisHash(WFEventProcessor):
-    '''AAAAAAAAAAA
+    '''
+    Component writing intermediate COCO information(images)
+    into Redis for downstream consolidation
     
     WeaveForge Component Configurations:
         redis_host: str

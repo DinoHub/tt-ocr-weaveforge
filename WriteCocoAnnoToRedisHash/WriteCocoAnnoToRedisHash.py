@@ -70,10 +70,7 @@ class WriteCocoAnnoToRedisHash(WFEventProcessor):
         ])
         anno = {
             'image_id': current_frame_number,
-            'x': x,
-            'y': y,
-            'w': w,
-            'h': h,
+            'bbox': [x,x+w,y,y+h],
             'attributes': {
                 'Text': text
             },
