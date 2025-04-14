@@ -29,10 +29,10 @@ wf_component_metadata = WFComponentMetadata(
                 "sub_data_types": []
             },
             {
-                'data_type': WFDataTypes.WFINT,
+                'data_type': WFDataTypes.WFLIST,
                 'description': 'output frame number',
                 'name': 'current_frame_number',
-                'sub_data_types': []
+                'sub_data_types': [WFDataTypes.WFINT]
             },
             {
                 'data_type': WFDataTypes.WFINT,
