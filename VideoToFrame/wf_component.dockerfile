@@ -8,4 +8,4 @@ COPY ./VideoToFrame.py /app/VideoToFrame.py
 COPY ./weaveforge-0.1.0-py3-none-any.whl /app/weaveforge-0.1.0-py3-none-any.whl
 RUN pip install --upgrade pip
 RUN --mount=type=cache,target=/root/.cache/pip pip install /app/weaveforge-0.1.0-py3-none-any.whl
-RUN pip install opencv-python-headless minio
+RUN pip install opencv-python-headless minio numpy==1.26.4
