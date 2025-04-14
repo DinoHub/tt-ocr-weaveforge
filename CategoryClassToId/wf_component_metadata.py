@@ -1,6 +1,14 @@
 from weaveforge import WFComponentMetadata, WFComponentTypes, WFDataTypes, WFDeviceTypes
 
 wf_component_metadata = WFComponentMetadata(
+    component_configurations = [
+        {
+            'data_type': WFDataTypes.WFSTRING,
+            'description': '',
+            'name': 'MAPPINGS',
+            'value': ''
+        }
+    ],
     component_description = 'Converts category class from text to an integer id',
     component_device = WFDeviceTypes.CPU,
     component_inputs = [
